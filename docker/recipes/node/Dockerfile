@@ -7,8 +7,8 @@ ARG GID
 ARG UID
 
 # Create a new group account with Args
-RUN groupadd --gid $GID $USER \
-  && useradd --uid $UID --gid $USER --shell /bin/bash --create-home $USER
+RUN addgroup -g $GID $USER \
+    && adduser -u $UID -G $USER -s /bin/sh -D $USER
 
 # App name
 ENV APP_NAME app
