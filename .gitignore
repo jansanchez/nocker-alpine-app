@@ -59,3 +59,4 @@ typings/
 
 .volumes/
 .DS_Store
+yarn.lock

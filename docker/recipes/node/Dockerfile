@@ -1,5 +1,5 @@
 # My Image
-FROM jansanchez/nocker-alpine:6.10.2
+FROM jansanchez/nocker-alpine:6.10.3
 
 # Declare Arguments
 ARG USER
