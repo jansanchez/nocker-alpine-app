@@ -26,7 +26,7 @@ How do I know my linux username?
 whoami
 ```
 
-Go to `./docker/compose/supply.yml` and edit the line 9, replacing `your_host_user` for your linux username
+Go to `./docker/compose/supply.yml` and edit the line 9, replacing `__YOUR_HOST_USER__` for your linux username
 ```
 1: version: '2'
 2:
@@ -36,7 +36,7 @@ Go to `./docker/compose/supply.yml` and edit the line 9, replacing `your_host_us
 6:     command: yarn install
 7:     volumes:
 8:       - ~/yarn_cache/:/tmp/cache/yarn/
-9:       - ../../source/:/home/your_host_user/app/
+9:       - ../../source/:/home/__YOUR_HOST_USER__/app/
 ```
 
 
@@ -51,7 +51,7 @@ docker-compose up
 ```
 
 ### So, Open your browser...
-[http://localhost:3000](http://localhost:3000)
+[http://localhost:3004](http://localhost:3004)
 
 ### Down
 ```
@@ -81,7 +81,24 @@ make up
 ```
 
 ### So, Open your browser...
-[http://localhost:3000](http://localhost:3000)
+[http://localhost:3004](http://localhost:3004)
+
+### Command
+```
+make command "yarn upgrade"
+```
+
+```
+make command "yarn install"
+```
+
+```
+make command "yarn add express"
+```
+
+```
+make command "yarn add -SD browser-sync"
+```
 
 ### Down
 ```

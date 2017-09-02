@@ -9,11 +9,14 @@ build: ## Build images
 install: ## Install dependencies
 	sh ./docker/scripts/supply.sh
 
-up: ## Up services
-	docker-compose up -d
+command: ## exec bash command
+	sh ./docker/scripts/bash.sh "$(filter-out $@,$(MAKECMDGOALS))"
 
-uplog: ## Up services with logs
+up: ## Up services
 	docker-compose up
+
+upnolog: ## Up services without logs
+	docker-compose -d
 
 down: ## Stop and remove services
 	docker-compose down
