@@ -1,24 +1,13 @@
 # My Image
 FROM jansanchez/nocker-alpine
 
-# Declare Arguments
-ARG USER
-ARG GID
-ARG UID
-
-# Create a new group account with Args
-RUN addgroup -g $GID $USER \
-    && adduser -u $UID -G $USER -s /bin/sh -D $USER
-
 # App name
 ENV APP_NAME app
 
-ENV USER_PATH /home/$USER/
+ENV ROOT_PATH /root/
+ENV USER_PATH $ROOT_PATH
 ENV APP_PATH $USER_PATH$APP_NAME/
 ENV YARN_PATH /tmp/cache/yarn/
-
-# Switch to $USER
-USER $USER
 
 # Yarn Configuration
 RUN mkdir -p $YARN_PATH \
